@@ -1,0 +1,16 @@
+# Oh yeah, btw
+
+## I had this idea 
+for a wordle clone of sorts.
+Well, it is and it isn't a clone.
+My idea is to take the aspect of a crossword and merge it with the wordle idea.
+
+Rules are : you get one guess, but you do get a hint.
+I'm struggling with two main things at the moment.
+
+- I'm not sure how i want to style the inputs
+- I'm not sure If it should be one try and three
+:	One try may make the user more annoyed.
+:	Three tries may be too many.
+
+Let me know your thoughts in the comments.

@@ -1,5 +1,6 @@
-import {setChallWord} from './dbInsert.js';
+var newChall = require('./dbInsert.js');
+
 
 let newWord = document.getElementById('inputWord');
 let newClue= document.getElementById('inputClue');
-setChallWord(newWord, newClue);
+newChall.setChallWord(newWord, newClue);

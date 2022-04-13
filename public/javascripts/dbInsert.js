@@ -1,4 +1,5 @@
-import {client, coll} from './conn.js';
+import client from './conn.js';
+import coll from './conn.js';
 
 export function setChallWord(word, clue){
 

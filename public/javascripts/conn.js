@@ -8,6 +8,7 @@ const coll = db.collection("challengeWords");
 return client,coll;
   // perform actions on the collection object
 }
+getConn();
 module.exports = {client, coll};
 
 

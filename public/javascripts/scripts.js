@@ -12,14 +12,18 @@ function getGuess(){
 	// Make the guessword global then get the length.
 	// then get the - detour -- should it be one input box?
 	// That would differentiate it from wordle.
-	document.cookie = "attemptWord="+ wordGuess;
+	//document.cookie = "attemptWord="+ wordGuess;
 }
 function setCookies(){
 
-	var cookDate = new Date();
-	cookDate.getDate()+1;
-	document.cookie = "tries=1; SameSite=None; Secure";
-	document.cookie = "attemptWord="+ wordGuess;
+	const today = new Date();
+	const tomorrow = new Date(today);
+	
+	
+	document.cookie = "id=1; tries=1; expires="+tomorrow.setDate(tomorrow.getDate()+1).toGMT()+"; SameSite=None; Secure";
+	//document.cookie = "attemptWord="+ wordGuess;
+	//document.cookie = " + "; Secure";
+	console.log(tomorrow);
 }
 function createBoxes(guessWord, clue){
 	var containDiv = document.createElement("div");
@@ -28,17 +32,10 @@ function createBoxes(guessWord, clue){
 	var keyboard = document.createElement("input");
 	for(i=0; i<wordLength; i++){
 		var newDiv = document.createElement("input");
-		newDiv.style.border = "1px solid black";
-		newDiv.style.height = "30px";
-		newDiv.style.width= "30px";
-		newDiv.style.display = "inline-block";
-		newDiv.style.margin = "3px";
-		newDiv.style.textAlign = "center";
 		newDiv.setAttribute("maxlength", "1");
-		newDiv.setAttribute("id", "letter"+i)
+		newDiv.setAttribute("id", "letter"+i);
 		containDiv.appendChild(newDiv);
 	}
-
 	var clues = document.getElementById("clue");
 	clues.innerHTML = clue;
 	//containDiv.style.display ="inline-block";

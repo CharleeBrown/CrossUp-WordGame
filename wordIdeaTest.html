@@ -15,11 +15,29 @@
 	</div>
 </body>
 		<script>
+
 			function guessCount(){
 				//After the button is clicked
 				// It will store a cookie with a count of 1.
-				// The cookie will dispose in 24 hours. This
+				// The cookie will dispose in 24 hours.
+				setCookies();
 
+
+			}
+			function getGuess(){
+				//I want to get the length of the word.
+				// The guessword should be global then.
+				// Make the guessword global then get the length.
+				// then get the - detour -- should it be one input box?
+				// That would differentiate it from wordle.
+				document.cookie = "attemptWord="+ wordGuess;
+			}
+			function setCookies(){
+
+				var cookDate = new Date();
+				cookDate.getDate()+1;
+				document.cookie = "tries=1; SameSite=None; Secure";
+				document.cookie = "attemptWord="+ wordGuess;
 			}
 			function createBoxes(guessWord, clue){
 				var containDiv = document.createElement("div");
@@ -35,8 +53,10 @@
 					newDiv.style.margin = "3px";
 					newDiv.style.textAlign = "center";
 					newDiv.setAttribute("maxlength", "1");
+					newDiv.setAttribute("id", "letter"+i)
 					containDiv.appendChild(newDiv);
 				}
+			
 				var clues = document.getElementById("clue");
 				clues.innerHTML = clue;
 				//containDiv.style.display ="inline-block";
@@ -44,6 +64,7 @@
 				mainDiv.style.paddingTop ="20px";
 				mainDiv.appendChild(containDiv);
 				keyboard.setAttribute("inputmode", "text");
+				setCookies();
 				
 			}
 			/* newDiv.addEventListener("onchange", function(){

@@ -3,9 +3,11 @@ extends layout
 block content
 	#container
 		div#adminDiv
+		form(action="/newWord", method="post") 
 			label|Enter new Word
 			input#inputWord
 			label|Enter new clue
 			input#inputClue
-			input(type="submit", onclick="setChallWord()",value="Set New Word")
-	script(src='/javascripts/wordSubmit.js')
+			input(type="submit", value="Set New Word")
+
+

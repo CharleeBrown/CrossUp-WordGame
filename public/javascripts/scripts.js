@@ -6,7 +6,7 @@ function guessCount() {
 
 
 }
-/* var elts = document.getElementsByClassName('letters');
+var elts = document.getElementsByClassName('letters');
 Array.from(elts).forEach(function(elt){
   elt.addEventListener("keyup", function(event) {
     // Number 13 is the "Enter" key on the keyboard
@@ -15,14 +15,15 @@ Array.from(elts).forEach(function(elt){
       elt.nextElementSibling.focus();
     }
   });
-}) */
+});
+
 function getGuess() {
 	//I want to get the length of the word.
 	// The guessword should be global then.
 	// Make the guessword global then get the length.
 	// then get the - detour -- should it be one input box?
 	// That would differentiate it from wordle.
-	//document.cookie = "attemptWord="+ wordGuess;
+	document.cookie = "attemptWord="+ wordGuess;
 }
 
 function numbercheck() {
@@ -63,7 +64,7 @@ function createBoxes(guessWord, clue) {
 	}
 	var clues = document.getElementById("clue");
 	clues.innerHTML = clue;
-	//containDiv.style.display ="inline-block";
+	containDiv.style.display ="inline-block";
 	mainDiv.style.textAlign = "center";
 	mainDiv.style.paddingTop = "20px";
 	mainDiv.appendChild(containDiv);
@@ -82,5 +83,5 @@ function fetchCheck(){
 	.then((response) => response.json())
 	.then((json) => console.log("id"+json['id']));
 }
-//document.addEventListener('DomContentLoaded', createBoxes("Seek", "To Search for"));
+document.addEventListener('DomContentLoaded', createBoxes("Seek", "To Search for"));
 document.addEventListener('DOMContentLoaded', fetchCheck());
